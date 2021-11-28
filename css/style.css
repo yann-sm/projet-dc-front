@@ -50,10 +50,10 @@ nav a:hover {
     position: absolute;
     left: 40px;
     margin-top: 40px;
+    animation: infinite linear rotate 3s;
 }
-.logo-footer {
-    width: 50px;
-    height: 50px;
+.logo:hover {
+    animation-play-state: paused;
 }
 /*titre*/
 .title {
@@ -61,18 +61,25 @@ nav a:hover {
     position: absolute;
     margin-top: 25%;
     text-transform: uppercase;
-    font-size: 40px;
-    letter-spacing: 2px;
     width: 100%;
 	text-align: center;
+}
+.title-main {
     color: white;
-	background: linear-gradient(to top, #4D0003, #910006, #C10008, #FF000A );
+    background: linear-gradient(to top, #4D0003, #910006, #C10008, #FF000A );
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	display: inline-block;
+    font-size: 80px;
+    letter-spacing: 6px;
 }
 
+.title-secondaire {
+    color: white;
+    font-size: 40px;
+    letter-spacing: 2px;
+}
 video {
     position: fixed;
     width: 100%; /* 100% */
@@ -81,17 +88,6 @@ video {
     z-index: -10;
 }
 
-.nuage {
-    position: absolute;   
-    left: -400px;
-}
-@keyframes animNuage {
-    0% { transform: translate(0px);}
-    20% { transform: translate(400px);}
-    60% { transform: translate(800px);}
-    90% { transform: translate(1000px); opacity: 0.5;}
-    100% { opacity: 0;}
-}
 /*compte à rebour*/
 .rebour {
 	font-family: 'exodus_demostriped','sans-serif';
@@ -104,7 +100,7 @@ video {
 	-webkit-text-fill-color: transparent;
 	display: inline-block;
     padding-top: 20px;
-    font-size: 22px;
+    font-size: 24px;
 }
 /*presentation*/
 .presentation {
@@ -218,26 +214,6 @@ audio::-webkit-media-controls-panel {
     border: 1px dashed red;/* !!a supprimer si spinner!!*/
     box-shadow: 2px 2px 5px#C10008;
 }
-/*.spinner {
-    position: absolute;
-    width: 163px;
-    height: 163px;
-    padding: 10px 10px 5px;
-    background-clip: padding-box; /* !importanté */
-/*    border: solid 10px transparent; /* !importanté */
-  /*  border-radius: 1em;
-    margin-left: -200px;
-}
-.spinner::before {
-    content: '';
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    z-index: -1;
-    margin: -10px; /* !importanté */
-   /* border-radius: 50%; /* !importanté */
- /*   background: linear-gradient(to right, yellow, red, pink, orange);
-    animation: infinite linear spin .2s;
-}*/
 
 .card:nth-child(2) {
     width: 200px;
@@ -500,19 +476,6 @@ audio::-webkit-media-controls-panel {
     display: none;
 }
   
-@keyframes ring {
-    0% {
-      width: 30px;
-      height: 30px;
-      opacity: 1;
-    }
-    100% {
-      width: 300px;
-      height: 300px;
-      opacity: 0;
-    }
-}
-
 /*footer*/
 footer {
     margin-top: 250px;
@@ -526,6 +489,10 @@ footer {
     margin-right: 40px;
     margin-left: 40px;
     background: linear-gradient(to left, #4D0003, #910006, #C10008, #FF000A, #4D0003 );
+}
+.logo-footer {
+    width: 50px;
+    height: 50px;
 }
 ul {
     margin-top: 10px;
@@ -545,11 +512,30 @@ li {
 }
 
 /*animation*/
+@keyframes ring {
+    0% {
+      width: 30px;
+      height: 30px;
+      opacity: 1;
+    }
+    100% {
+      width: 300px;
+      height: 300px;
+      opacity: 0;
+    }
+}
 @keyframes spin { 
     from { 
         transform: rotate(0deg); 
     } to { 
         transform: rotate(360deg); 
+    }
+}
+@keyframes rotate {
+    from { 
+        transform: rotateY(0deg); 
+    } to { 
+        transform: rotateY(360deg); 
     }
 }
 @keyframes zoom {
@@ -565,7 +551,6 @@ li {
 	  transform: translate(4px, 0);
 	}
 }
-
 @keyframes colorChange {
     10%{ background-color: red;}
     30%{ background-color: pink;}
@@ -709,26 +694,27 @@ li {
     nav {
         margin-left: 0px;
         margin-top: 40px;
-        text-align: left;
     }
     nav a {
         font-size: 14px;
+        padding: 2px;
     }
     .nav-media {
         display: flex;
         flex-direction: column;
-    }
-    nav a {
-        padding: 2px;
+        text-align: start;
     }
     .title {
         margin-top: 40%;
     }
-    .title h1 {
+    .title-main {
         font-size: 70px;
     }
     .title-secondaire {
         font-size: 30px;
+    }
+    .rebour {
+        font-size: 18px;
     }
     .presentation-title, .programmation-title, .billeterie-title {
         font-size: 30px;
@@ -806,11 +792,14 @@ li {
     .title {
         margin-top: 200px;
     }
-    .title h1 {
+    .title-main {
         font-size: 30px;
     }
     .title-secondaire {
         font-size: 15px;
+    }
+    .rebour {
+        font-size: 14px;
     }
     .presentation {
         padding-top: 400px;
