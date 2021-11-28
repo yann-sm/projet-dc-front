@@ -242,3 +242,28 @@ function sup(){
     document.querySelector(".billeterie-newsletter").style.visibility = "visible";
     document.querySelector(".bull").style.visibility = "visible";
 }
+
+//compte à rebour
+ let AfficheJour = document.querySelector(".compte");
+ let afficheHours = document.querySelector(".hour");
+
+ function Rebour() {
+	 let date1 = new Date();
+	 let date2 = new Date ("Aug 18, 2022 00:00:00");
+	 let sec = (date2 - date1) / 1000;
+	 let n = 24 * 3600;
+
+	 if (sec > 0) {
+		j = Math.floor (sec / n);
+		h = Math.floor ((sec - (j * n)) / 3600);
+		mn = Math.floor ((sec - ((j * n + h * 3600))) / 60);
+		sec = Math.floor (sec - ((j * n + h * 3600 + mn * 60)));
+
+		AfficheJour.innerHTML = j +" jours "
+		afficheHours.innerHTML = h +" : "+ mn +" : "+ sec;
+
+		window.status = "Temps restant : " + j +" j "+ h +" : "+ mn +" : "+ sec;
+ 	}
+ 	tRebour = setTimeout ("Rebour();", 1000);
+ }
+ Rebour();
