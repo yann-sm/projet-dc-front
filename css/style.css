@@ -12,6 +12,8 @@
          url('../police/ExodusDemo-Sharpen.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+	padding-top: 20px;
+    font-size: 22px;
 } 
 
 * {
