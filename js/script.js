@@ -56,10 +56,12 @@ document.querySelector(".card-one").addEventListener("click", function(){
     lecteur.setAttribute("controls", "true");
     lecteur.setAttribute("src","media/musics/motorjesus.mp3");
     lecteur.style.height = "20px";
+
     progCard.appendChild(lecteur);
 
     let space = document.createElement('br');
     progCard.appendChild(space);
+
 });
 
 document.querySelector(".card-two").addEventListener("click", function(){
@@ -89,6 +91,7 @@ document.querySelector(".card-two").addEventListener("click", function(){
     
     let space = document.createElement('br');
     progCard.appendChild(space);
+
 });
 
 document.querySelector(".card-three").addEventListener("click", function(){
@@ -211,6 +214,7 @@ document.querySelector(".billeterie-newsletter").addEventListener("click", funct
     input.style.marginLeft = "50px";
     input.style.borderRadius = "5px";
     input.style.border = "2px solid darkred";
+    input.style.backgroundColor = "black";
     input.style.marginTop = "5px";
     //bouton
     let btn = document.createElement('button');
@@ -242,28 +246,27 @@ function sup(){
     document.querySelector(".billeterie-newsletter").style.visibility = "visible";
     document.querySelector(".bull").style.visibility = "visible";
 }
+//compte a rebour
+let AfficheJour = document.querySelector(".compte");
+let afficheHours = document.querySelector(".hour");
 
-//compte à rebour
- let AfficheJour = document.querySelector(".compte");
- let afficheHours = document.querySelector(".hour");
+function Rebour() {
+    let date1 = new Date();
+    let date2 = new Date ("Aug 18, 2022 00:00:00");
+    let sec = (date2 - date1) / 1000;
+    let n = 24 * 3600;
 
- function Rebour() {
-	 let date1 = new Date();
-	 let date2 = new Date ("Aug 18, 2022 00:00:00");
-	 let sec = (date2 - date1) / 1000;
-	 let n = 24 * 3600;
+    if (sec > 0) {
+       j = Math.floor (sec / n);
+       h = Math.floor ((sec - (j * n)) / 3600);
+       mn = Math.floor ((sec - ((j * n + h * 3600))) / 60);
+       sec = Math.floor (sec - ((j * n + h * 3600 + mn * 60)));
 
-	 if (sec > 0) {
-		j = Math.floor (sec / n);
-		h = Math.floor ((sec - (j * n)) / 3600);
-		mn = Math.floor ((sec - ((j * n + h * 3600))) / 60);
-		sec = Math.floor (sec - ((j * n + h * 3600 + mn * 60)));
+       AfficheJour.innerHTML = j +" jours "
+       afficheHours.innerHTML = h +" : "+ mn +" : "+ sec;
 
-		AfficheJour.innerHTML = j +" jours "
-		afficheHours.innerHTML = h +" : "+ mn +" : "+ sec;
-
-		window.status = "Temps restant : " + j +" j "+ h +" : "+ mn +" : "+ sec;
- 	}
- 	tRebour = setTimeout ("Rebour();", 1000);
- }
- Rebour();
+       window.status = "Temps restant : " + j +" j "+ h +" : "+ mn +" : "+ sec;
+    }
+    tRebour = setTimeout ("Rebour();", 1000);
+}
+Rebour();

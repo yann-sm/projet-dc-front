@@ -12,8 +12,6 @@
          url('../police/ExodusDemo-Sharpen.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-	padding-top: 20px;
-    font-size: 22px;
 } 
 
 * {
@@ -22,6 +20,7 @@
 body {
     overflow-x: hidden;
     font-family: sans-serif;
+    background-color: black;
 }
 /*navigation*/
 nav {
@@ -73,9 +72,6 @@ nav a:hover {
 	-webkit-text-fill-color: transparent;
 	display: inline-block;
 }
-.title-secondaire {
-    color: white;
-}
 
 video {
     position: fixed;
@@ -96,7 +92,6 @@ video {
     90% { transform: translate(1000px); opacity: 0.5;}
     100% { opacity: 0;}
 }
-
 /*compte à rebour*/
 .rebour {
 	font-family: 'exodus_demostriped','sans-serif';
@@ -108,11 +103,9 @@ video {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	display: inline-block;
-	padding-top: 20px;
-    	font-size: 22px;
+    padding-top: 20px;
+    font-size: 22px;
 }
-
-
 /*presentation*/
 .presentation {
     color: white;
@@ -195,6 +188,11 @@ video {
 }
 .paralaxe3 {
     margin-left: -1200px;
+}
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-panel {
+    border-radius: 11px;
+    background-color: #910006;
 }
 .card {
     width: 100px;
@@ -390,6 +388,7 @@ video {
 
 .container-column {
     flex-direction: column;
+    letter-spacing: 4px;
 }
 /*img des éditions*/
 .img-motocultor {
@@ -402,7 +401,6 @@ video {
 }
 .number1 {
     font-family: 'exodus_demostriped','sans-serif';
-    letter-spacing: 4px;
     position: absolute;
     margin-top: 30px;
     width: 100%;
@@ -704,10 +702,17 @@ li {
 }
 
 @media (max-width: 900px) {
+    .logo {
+        width: 80px;
+        height: 80px;
+    }
     nav {
         margin-left: 0px;
         margin-top: 40px;
         text-align: left;
+    }
+    nav a {
+        font-size: 14px;
     }
     .nav-media {
         display: flex;
@@ -765,11 +770,41 @@ li {
     #prog-card {
         margin-left: -400px;
     }
+    .img-motocultor {
+        height: 200px;
+    }
+    .number1 {
+        font-size: 200px;
+        margin-top: 10px;
+    } 
+    .number2 {
+        font-size: 200px;
+        margin-top: 210px;
+    } 
+    .number3 {
+        margin-top: 410px;
+        font-size: 200px;
+    }
+    .presentation {
+        height: 60em;
+    }
+    .programmation {
+        height: 40em;
+    }
+    .billeterie {
+        height: 85em;
+    }
+    .billeterie-text {
+        font-size: 20px;
+    }
 }
 
 @media (max-width: 450px) {
+    nav a {
+        font-size: 14px;
+    }
     .title {
-        margin-top: 50%;
+        margin-top: 200px;
     }
     .title h1 {
         font-size: 30px;
@@ -777,15 +812,18 @@ li {
     .title-secondaire {
         font-size: 15px;
     }
+    .presentation {
+        padding-top: 400px;
+    }
     .presentation-title, .programmation-title, .billeterie-title {
         font-size: 20px;
     }
     #slider {
-        width: 400px;
-        height: 200px;
+        width: 300px;
+        height: 150px;
     }
     .prev {
-        width: 400px;
+        width: 300px;
     }
     #prog-card {
         margin-left: -550px;
@@ -795,5 +833,29 @@ li {
         width: 300px;
         height: 30px;
         font-size: 20px;
+    }
+    .billeterie {
+        height: 60em;
+    }
+    .billeterie-newsletter {
+        font-size: 20px;
+    }
+    .billeterie-newsletter:hover {
+        font-size: 30px;
+    }
+    .img-motocultor {
+        height: 100px;
+    }
+    .number1 {
+        font-size: 100px;
+        margin-top: 0px;
+    } 
+    .number2 {
+        font-size: 100px;
+        margin-top: 110px;
+    } 
+    .number3 {
+        margin-top: 210px;
+        font-size: 100px;
     }
 }
