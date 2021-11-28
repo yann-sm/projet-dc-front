@@ -95,6 +95,20 @@ video {
     100% { opacity: 0;}
 }
 
+/*compte à rebour*/
+.rebour {
+	font-family: 'exodus_demostriped','sans-serif';
+	text-align: center;
+	text-align: center;
+    color: white;
+	background: linear-gradient(to top, #4D0003, #910006, #C10008, #FF000A );
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	display: inline-block;
+}
+
+
 /*presentation*/
 .presentation {
     color: white;
