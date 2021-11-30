@@ -1,12 +1,15 @@
 
 //transform: translteY 1600max
-window.addEventListener('scroll',function(){
+if(window.innerWidth > 450) {//pour declencher uniquement si la fenetre est sup a 680 par exemple, a voire....
+    window.addEventListener('scroll',function(){
 	console.log(window.scrollY);
     document.querySelector('.paralaxe').style.transform='translate('+(window.scrollY-2000)+'px)';
     document.querySelector('.paralaxe2').style.transform='translate('+(window.scrollY-2000)+'px)';
     document.querySelector('.paralaxe3').style.transform='translate('+(window.scrollY-2000)+'px)';
  
-}); /* */
+    });
+}
+ /* */
 
 // function pour le slide
 let tabl = [
@@ -187,19 +190,12 @@ document.querySelector(".billeterie-newsletter").addEventListener("click", funct
     
     //element div container
     let container = document.createElement('div');
-    container.style.position = "absolute";
-    container.style.marginLeft = "40%";
-    container.style.marginRight = "40%";
-    container.style.width = "300px";
-    container.style.height = "150px";
-    container.style.backgroundColor = "black";
-    container.style.border = "1px solid darkred";
-    container.style.borderRadius = "5px";
+    container.classList.add("form-popup");
     form.appendChild(container);
 
     //texte
     let text = document.createElement('p');
-    text.textContent = "NEXSLETTER";
+    text.textContent = "NEWSLETTER";
     text.style.fontFamily = "exodus_demostriped";
     text.style.fontSize = "25px";
     text.style.color = "white";

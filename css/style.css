@@ -86,6 +86,7 @@ video {
   	height: 100vh;/* vh et vw pour adapter une hauteur qui prend la hauteur de l'écran*/
   	object-fit: cover;
     z-index: -10;
+    overflow-x: hidden;
 }
 
 /*compte à rebour*/
@@ -296,6 +297,7 @@ audio::-webkit-media-controls-panel {
 
 .programmation-all {
     text-align: right;
+    font-size: 12px;
     margin-right: 40px;
     margin-top: 550px;
 }
@@ -474,6 +476,19 @@ audio::-webkit-media-controls-panel {
 .button:hover::after, button:focus::after {
     animation: none;
     display: none;
+}
+
+/*form newsletter*/
+.form-popup {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    width: 300px;
+    height: 150px;
+    background-color: black;
+    border: 1px solid darkred;
+    border-radius: 5px;
 }
   
 /*footer*/
@@ -783,11 +798,28 @@ li {
     .billeterie-text {
         font-size: 20px;
     }
+    .footer-column {
+        flex-wrap: wrap;
+    }
 }
-
+@media (max-width: 520px) {
+    .title {
+        margin-top: 70%;
+    }
+    .title-main {
+        font-size: 60px;
+    }
+    .footer-contacts {
+        padding-top: 30px;
+    }
+}
 @media (max-width: 450px) {
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
     nav a {
-        font-size: 14px;
+        font-size: 12px;
     }
     .title {
         margin-top: 200px;
@@ -804,6 +836,9 @@ li {
     .presentation {
         padding-top: 400px;
     }
+    .presentation-video {
+        margin-top: -10px;
+    }
     .presentation-title, .programmation-title, .billeterie-title {
         font-size: 20px;
     }
@@ -813,6 +848,9 @@ li {
     }
     .prev {
         width: 300px;
+    }
+    .programmation {
+        height: 30em;
     }
     .programmation-card {
         margin-left: 700px;
@@ -849,6 +887,19 @@ li {
 
     #prog-card {
         margin-left: -770px;
+        width: 150px;
+    }
+    .group-title {
+        font-size: 22px;
+    }
+    .card-description {
+        font-size: 14px;
+    }
+    .title-music {
+        font-size: 14px;
+    }
+    audio {
+        width: 180px;
     }
     .billeterie-btn {
         margin-top: 150px;
@@ -858,6 +909,9 @@ li {
     }
     .billeterie {
         height: 60em;
+    }
+    .billeterie-btn {
+        margin-top: 50px;
     }
     .billeterie-newsletter {
         font-size: 20px;
@@ -880,7 +934,11 @@ li {
         margin-top: 210px;
         font-size: 100px;
     }
-    .container-footer {
-        flex-wrap: wrap;
+    .footer-partenaires {
+        padding-top: 30px;
     }
+    .footer-infos {
+        padding-top: 30px;
+    }
+   
 }
